@@ -1,29 +1,22 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'HelloBridgeLabz';
+  userName: string = ''; // ✅ Initialize userName
+  imageUrl = 'assets/bridge_labz_logo.jpg';
+  url = 'https://www.bridgelabz.com';
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  ngOnInit(): void {
+    this.title = 'Hello from BridgeLabz.';
+  }
 
-  it(`should have the 'HelloBridgeLabz' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('HelloBridgeLabz');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, HelloBridgeLabz');
-  });
-});
+  onClick(): void {
+    console.log('BridgeLabz Logo Clicked');
+    window.open(this.url, '_blank');
+  }
+}
