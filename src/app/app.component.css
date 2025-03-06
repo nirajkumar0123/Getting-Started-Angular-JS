@@ -1,37 +1,32 @@
 div {
     text-align: center;
-    margin-top: 50px;
+    margin: 20px;
   }
-
+  
   h1 {
     font-size: 24px;
     color: #333;
-    font-family: Arial, sans-serif;
-  }
-
-  img {
-    width: 150px;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
   }
   
-  img:hover {
-    transform: scale(1.1);
-  }
-
-  input {
-    padding: 10px;
-    width: 250px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  img {
+    width: 150px;
+    cursor: pointer;
     margin-top: 10px;
   }
   
-  input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  input {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .error-output {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: red;
+    font-style: italic;
   }
   

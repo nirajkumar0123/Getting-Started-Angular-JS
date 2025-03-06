@@ -1,25 +1,33 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true, 
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [FormsModule] 
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'HelloBridgeLabz';
+  title: string = "Hello from BridgeLabz";
+  imageUrl: string = 'assets/logo.jpg';
+  url: string = 'https://www.bridgelabz.com';
   userName: string = '';
-  imageUrl = 'assets/logo.jpg';
-  url = 'https://www.bridgelabz.com';
+  nameError: string = '';
 
-  ngOnInit(): void {
-    this.title = 'Hello from BridgeLabz.';
+  validateUserName(): void {
+    const namePattern = /^[A-Z][a-zA-Z]{2,}$/;
+    this.nameError = namePattern.test(this.userName) ? '' : 'Incorrect Name!';
   }
 
-  onClick(): void {
-    console.log('BridgeLabz Logo Clicked');
-    window.open(this.url, '_blank');
+  onClick(event: Event): void {
+    console.log("Save button is clicked", event);
+    window.open(this.url, "_blank");
+  }
+
+  onInput(event: Event): void {
+    console.log("Change Event Occurred", event);
+    this.validateUserName();
   }
 }
