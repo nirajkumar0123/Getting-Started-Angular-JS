@@ -1,5 +1,6 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-  <img [src]="imageUrl" (click)="onClick($event)" 
-       alt="The BridgeLabz logo: a Bridge to Employment through a Lab Works" />
+<div style="text-align: center;">
+  <h1>Hello {{ userName }} from BridgeLabz</h1>
+  <img [src]="imageUrl" (click)="onClick()" alt="BridgeLabz Logo" />
+  <br/><br/>
+  <input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
 </div>
